@@ -1,6 +1,7 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-const rootReducer = combineReducers({});
+import programms from 'webapp/estimatedProgramm/reducer/programm.reducer';
+const rootReducer = combineReducers({programms});
 
 export default configureStore({
     reducer: rootReducer,
