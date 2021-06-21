@@ -1,32 +1,36 @@
-import React,{} from 'react';
+import React,{useState} from 'react';
 import NavBar from '../container/NavBar';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import {addProgramm} from 'webapp/estimatedProgramm/reducer/programm.reducer'
 
 
 const ServiceChoice = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
+
     const [programm, setProgramm] = useState({
         service:'',
-        type:'',
-        price:''
+        price: 0
     });
 
     const appClick =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={service: 'app', type: 'Android / IOS', price: '300'}
+        const data ={service: 'app', price: 300}
         setProgramm({...data});
     }
     const webClick =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={service: 'web', type: '반응형웹', price: '400'}
+        const data ={service: 'web', price: 400}
         setProgramm({...data});
     }
-    const dispatchEvent = () =>{
-
+    const dispatchEvent = (e) =>{
+        e.stopPropagation();
+        e.preventDefault();
+        dispatch(addProgramm(programm))
+        history.push("/programm/plan")
     }
     console.log("ttttt", programm)
     return (<>
@@ -34,7 +38,7 @@ const ServiceChoice = () => {
             <div className="main_section2_bg">
                     <h2>0단계, 어떤 서비스를 만들고 싶으신가요?</h2>
             </div>
-            <div>
+            <div className="main_section3_bg">
                 <button  className="optionBtn" onClick={(e)=>appClick(e)}>
                     <h4 className="App-">App개발</h4>
                     <h3 className="Android-iOS">Android / IOS</h3>
@@ -48,9 +52,9 @@ const ServiceChoice = () => {
                 </button>
             </div>
         </div>
-            <div>
+        <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/'><button className="pageBtn">이전단계</button></Link>
-                <Link to='/programm/plan'><button className="pageBtn" onClick={()=>dispatchEvent()}>다음단계</button></Link>
+                <button className="pageBtn" onClick={(e)=> dispatchEvent(e)}>다음단계</button>
             </div>
         </div>
       </>);

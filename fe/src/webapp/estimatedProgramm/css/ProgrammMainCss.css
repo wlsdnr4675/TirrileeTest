@@ -1,3 +1,6 @@
+body {
+  font-family: NotoSansCJKKR;
+}
 .main_section1_banner {
   width: 100%;
   height: 380px;
@@ -5,12 +8,6 @@
   padding: 40px 42px 11px 12px;
   object-fit: contain;
   background-color: #f9f9f9;
-}
-.M-_ {
-  width: 374px;
-  height: 708px;
-  padding: 0 0 148px;
-  background-color: #ffffff;
 }
 .marginAuto {
   margin: 0, auto;
@@ -45,6 +42,7 @@
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-color: #ffffff;
+  text-align: center;
 }
 .M-_00-1 {
   width: 100%;
@@ -69,14 +67,22 @@
 }
 .main_section2_bg_2 {
   width: 100%;
-  height: 552px;
+  height: 1250px;
   margin: 45px 0 39px;
   padding: 32px 12px 60px;
   background-color: #f8fafe;
   text-align: center;
 }
+.main_section3_bg {
+  width: 100%;
+  height: 594px;
+  margin: 139px 0 54px;
+  padding: 32px 12px 25px;
+  background-color: #f8fafe;
+  text-align: center;
+}
 .smallFont {
-  width: 329px;
+  width: 400px;
   height: 20px;
   margin: 0 auto;
   object-fit: contain;
@@ -99,11 +105,11 @@
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-color: #ffffff;
+  text-align: center;
 }
 .App- {
-  width: 300px;
+  width: 350px;
   height: 27px;
-  margin: 0 auto;
   font-family: NotoSansCJKKR;
   font-size: 18px;
   font-weight: bold;
@@ -111,13 +117,11 @@
   font-style: normal;
   line-height: 0.89;
   letter-spacing: normal;
-  text-align: center;
   color: #000000;
 }
 .Android-iOS {
-  width: 300px;
+  width: 350px;
   height: 20px;
-  margin: 8px 0 20px;
   font-family: NotoSansCJKKR;
   font-size: 14px;
   font-weight: normal;
@@ -129,9 +133,8 @@
   color: #9e9e9e;
 }
 .price {
-  width: 300px;
+  width: 350px;
   height: 27px;
-  margin: 20px 11px 0;
   font-family: NotoSansCJKKR;
   font-size: 18px;
   font-weight: bold;
@@ -148,11 +151,97 @@
 .pageBtn {
   width: 167px;
   height: 48px;
-  margin: 40px 16px 56px 12px;
+  margin: 0 auto;
+  margin-left: 20px;
   padding: 14px 58px 14px 55px;
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #e0e0e0;
   background-color: #ffffff;
+}
+.smallBtn {
+  margin-top: 50px;
+  width: 350px;
+  height: 60px;
+  margin: 40px 0 20px;
+  padding: 16px 24px;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-color: #ffffff;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+p {
+  width: 100%;
+  height: 27px;
+  margin: 0 1px 0;
+  font-family: NotoSansCJKKR;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.89;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+.pagePrice {
+  width: 350px;
+  height: 27px;
+  margin: 1px 0 0;
+  font-family: NotoSansCJKKR;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.39;
+  letter-spacing: normal;
+  text-align: right;
+  color: #226bef;
+}
+
+.finishComment {
+  width: 100%;
+  height: 111px;
+  margin: 101px 89px 82px 85px;
+  object-fit: contain;
+  font-family: NotoSansCJKKR;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: center;
+  color: #226bef;
+}
+.finishComment .text-style {
+  width: 100%;
+  color: #000000;
+  text-align: center;
+}
+.finishComment .text-style .middleStyle {
+  width: 100%;
+  height: 43px;
+  margin: 82px 27px 105px;
+  object-fit: contain;
+  font-family: NotoSansCJKKR;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4d4d4d;
+  text-align: center;
+}
+.checkBox {
+  width: 18px;
+  height: 18px;
+  margin: 5px 0 5px 24px;
+  object-fit: contain;
+  text-align: right;
 }
