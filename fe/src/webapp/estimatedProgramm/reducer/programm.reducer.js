@@ -25,11 +25,15 @@ const programmSlice = createSlice({
     initialState: {
         programms:{},
         current: [],
+        option: [],
     },
     reducers:{
         addProgramm : (state, {payload}) =>{
             console.log("addProgramms: " , payload)
             state.current.push(payload)
+        },
+        addOption : (state, {payload}) => {
+            state.option.push(payload)
         }
         
 

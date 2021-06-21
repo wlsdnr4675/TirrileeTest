@@ -32,14 +32,14 @@ const ServiceChoice = () => {
         dispatch(addProgramm(programm))
         history.push("/programm/plan")
     }
-    console.log("ttttt", programm)
+    console.log("ssss",programm)
     return (<>
         <div className="textCenter">
             <div className="main_section2_bg">
                     <h2>0단계, 어떤 서비스를 만들고 싶으신가요?</h2>
             </div>
-            <div className="main_section3_bg">
-                <button  className="optionBtn" onClick={(e)=>appClick(e)}>
+            <div className="main_section3_bg" >
+                <button  className="optionBtn" style={{marginTop: "100px"}} onClick={(e)=>appClick(e)}>
                     <h4 className="App-">App개발</h4>
                     <h3 className="Android-iOS">Android / IOS</h3>
                     <h3 className="price" >300만원</h3>
