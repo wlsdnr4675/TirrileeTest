@@ -25,32 +25,6 @@ const programmSlice = createSlice({
     initialState: {
         programms:{},
         current: [],
-        options: [{
-            option: "GPS(내주변)",
-            price: 200
-        },{
-            option: "지도(맵커스텀)",
-            price: 200
-        },{
-            option: "카카오톡 푸쉬",
-            price: 200
-        },{
-            option: "커뮤니티",
-            price: 200
-        },{
-            option: "공유하기",
-            price: 200
-        },{
-            option: "유저타입확장",
-            price: 200
-        },{
-            option: "채팅(실시간)",
-            price: 200
-        },
-        {
-            option: "필요없어요",
-            price: 0
-        },],
         currentOption:[],
     },
     reducers:{

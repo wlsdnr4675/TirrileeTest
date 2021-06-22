@@ -11,11 +11,6 @@ import org.springframework.stereotype.Repository;
 import kr.tirrilee.api.estimatedProgramm.domain.Programm;
 
 interface ProgrammCustomRepository {
-
-    @EntityGraph(attributePaths = { "options" }, type = EntityGraph.EntityGraphType.FETCH)
-    @Query("SELECT * FROM Programm p WHERE p.programmId= :programmId")
-    Optional<Programm> getByProgrammId(@Param("programmId") Long programmId);
-
 }
 
 @Repository

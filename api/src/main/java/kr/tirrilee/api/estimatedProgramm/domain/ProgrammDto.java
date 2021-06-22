@@ -1,6 +1,11 @@
 package kr.tirrilee.api.estimatedProgramm.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Component;
 
@@ -23,5 +28,9 @@ public class ProgrammDto {
     private String pageNum;
     private Long price;
 
-    private List<Option> options;
+    private String optionName;
+    private Long optionPrice;
+
+    private List<OptionDto> options;
+
 }

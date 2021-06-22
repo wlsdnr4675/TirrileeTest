@@ -34,7 +34,11 @@ public class Option {
     private Long optionPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "programm_no")
+    @JoinColumn(name = "programm_id")
     private Programm programm;
+
+    public void confirmProgramm(Programm programm) {
+        this.programm = programm;
+    }
 
 }

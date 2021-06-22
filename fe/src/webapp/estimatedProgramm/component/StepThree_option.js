@@ -8,8 +8,16 @@ const StepThree_option = () => {
     const dispatch = useDispatch();
     const [isChecked , setIsChecked] = useState(false);
 
-    const optionList = useSelector(state => state.programms.options)
-
+    const [optionList, setOptionList] = useState([
+        { optionName: "GPS(내주변)", optionPrice: 200 },
+        { optionName: "지도(맵커스텀)", optionPrice: 200 },
+        { optionName: "카카오톡 푸쉬", optionPrice: 200 },
+        { optionName: "커뮤니티", optionPrice: 200 },
+        { optionName: "공유하기", optionPrice: 200 },
+        { optionName: "유저타입확장", optionPrice: 200 },
+        { optionName: "채팅(실시간)", optionPrice: 200 },
+        { optionName: "필요없어요", optionPrice: 0},
+    ]);
     const handleCheck = () => {
         setIsChecked(!isChecked)
     }
@@ -48,8 +56,8 @@ const StepThree_option = () => {
                 return (<>
             <div style={{marginTop: "50px"}}>
                 <div className="smallBtn" key={i}>
-                    <p>{item.option}</p>
-                    <h3 className="pagePrice">{item.price}만원
+                    <p>{item.optionName}</p>
+                    <h3 className="pagePrice">{item.optionPrice}만원
                     <input className="checkBox" type="checkbox" data-option={item.option} data-price={item.price} onChange={(e)=>handleCheck(e)}/>
                     </h3>
                 </div>
