@@ -71,7 +71,7 @@ const StepOne_plan = () => {
         </div>
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/programm/zero'><button className="pageBtn">이전단계</button></Link>
-                <button className="pageBtn" onClick={(e)=> dispatchEvent(e)}>다음단계</button>
+                <button className="pageBtn" style={{marginLeft: "20px"}} onClick={(e)=> dispatchEvent(e)}>다음단계</button>
             </div>
     </div>
      </>);

@@ -40,9 +40,11 @@ const ServiceChoice = () => {
             </div>
             <div className="main_section3_bg" >
                 <button  className="optionBtn" style={{marginTop: "100px"}} onClick={(e)=>appClick(e)}>
-                    <h4 className="App-">App개발</h4>
-                    <h3 className="Android-iOS">Android / IOS</h3>
-                    <h3 className="price" >300만원</h3>
+                    <div>
+                        <h4 className="App-">App개발</h4>
+                        <h3 className="Android-iOS">Android / IOS</h3>
+                        <h3 className="price" >300만원</h3>
+                    </div>
                 </button>
             <div>
                 <button className="optionBtn" onClick={(e)=>webClick(e)}>
@@ -54,7 +56,7 @@ const ServiceChoice = () => {
         </div>
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/'><button className="pageBtn">이전단계</button></Link>
-                <button className="pageBtn" onClick={(e)=> dispatchEvent(e)}>다음단계</button>
+                <button className="pageBtn" style={{marginLeft: "20px"}} onClick={(e)=> dispatchEvent(e)}>다음단계</button>
             </div>
         </div>
       </>);

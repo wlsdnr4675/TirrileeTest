@@ -63,7 +63,7 @@ body {
 }
 .main_section3_bg {
   width: 100%;
-  height: 594px;
+  height: 650;
   margin: 139px 0 54px;
   padding: 32px 12px 25px;
   background-color: #f8fafe;
@@ -85,10 +85,9 @@ body {
   color: #a0a0a0;
 }
 .optionBtn {
-  width: 350px;
+  width: 380px;
   height: 158px;
-  margin: 20px auto 40px;
-  padding: 24px 139px 32px;
+  margin: 0 auto 40px;
   border-radius: 4px;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
@@ -96,7 +95,7 @@ body {
   text-align: center;
 }
 .optionBtn .App- {
-  width: 350px;
+  width: 300px;
   height: 27px;
   font-family: NotoSansCJKKR;
   font-size: 18px;
@@ -108,7 +107,7 @@ body {
   color: #000000;
 }
 .optionBtn .Android-iOS {
-  width: 350px;
+  width: 300px;
   height: 20px;
   font-family: NotoSansCJKKR;
   font-size: 14px;
@@ -121,7 +120,7 @@ body {
   color: #9e9e9e;
 }
 .optionBtn .price {
-  width: 350px;
+  width: 300px;
   height: 27px;
   font-family: NotoSansCJKKR;
   font-size: 18px;
@@ -140,7 +139,6 @@ body {
   width: 167px;
   height: 48px;
   margin: 0 auto;
-  margin-left: 20px;
   padding: 14px 58px 14px 55px;
   object-fit: contain;
   border-radius: 4px;
@@ -150,10 +148,9 @@ body {
 }
 .smallBtn {
   margin-top: 50px;
-  width: 350px;
-  height: 60px;
+  width: 380px;
+  height: 90px;
   margin: 40px 0 20px;
-  padding: 16px 24px;
   border-radius: 4px;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
@@ -161,10 +158,19 @@ body {
   text-align: center;
   margin: 0 auto 40px;
 }
+.adminBtn {
+  width: 167px;
+  height: 184px;
+  margin: 40px 16px 20px 0;
+  padding: 12px 12px 30px 14px;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
 p {
   width: 100%;
   height: 27px;
-  margin: auto 0 5px 24px;
+  margin: 0 0 20px 24px;
   font-family: NotoSansCJKKR;
   font-size: 18px;
   font-weight: bold;
@@ -232,4 +238,13 @@ p {
   margin: 10px 0 5px 24px;
   object-fit: contain;
   text-align: right;
+}
+.adminAlign {
+  margin-top: 20px;
+  display: flex;
+  margin: 0 auto;
+}
+.btnDiv {
+  margin-top: 50px;
+  display: inline-block;
 }

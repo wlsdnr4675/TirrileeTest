@@ -1,7 +1,11 @@
 import React,{} from 'react';
+import { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 
 const StepFinish = () => {
+    useEffect(()=>{
+        
+    })
     return (<> 
     <div className="finishComment">
         <div className="text-style">
@@ -19,7 +23,7 @@ const StepFinish = () => {
            
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/'><button className="pageBtn">다시하기</button></Link>
-                <Link to='/'><button className="pageBtn" onClick={""}>신청하기</button></Link>
+                <Link to='/'><button className="pageBtn" style={{marginLeft: "20px"}} onClick={""}>신청하기</button></Link>
         </div>
     </div>
     </>);

@@ -1,28 +1,38 @@
 import React,{} from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom'
+import {addOption} from 'webapp/estimatedProgramm/reducer/programm.reducer'
 
 const StepThree_option = () => {
     const dispatch = useDispatch();
     const [isChecked , setIsChecked] = useState(false);
-    const [option, setOption] = useState({
-        option: "",
-        price: 0
-    })
 
-    const handleCheck = (e) =>{
+    const optionList = useSelector(state => state.programms.options)
+
+    const handleCheck = () => {
         setIsChecked(!isChecked)
+    }
+
+    const handleClick =  (e) =>{
+        e.stopPropagation();
+        e.preventDefault();
+        const option = e.target.getAttribute("data-option")
+        const price = e.target.getAttribute("data-price")
         if(isChecked){
-            dispatch()
+            dispatch(addOption({option: option, price: Number(price)}))
+        }
+        else{
+
         }
         
     }
+    console.log("check: ", isChecked)
+
     return (<>
      <div>
         <div className="main_section2_bg">
                 <h2>3단계, 기본 기능 외에 꼭 검증하고 <br/> 싶은 특별한 기능을 알려주세요.</h2>
-
         </div>
         <div className="main_section2_bg_2">
             <h2>04. 필요한 추가 기능을 선택해보세요!</h2>
@@ -34,70 +44,25 @@ const StepThree_option = () => {
             <h4 className="smallFont" style={{color :"blue"}}>(중복 선택 가능합니다.)</h4>
             </div>
             </div>
-            
+            {optionList.map((item, i) =>{
+                return (<>
             <div style={{marginTop: "50px"}}>
-                <div className="smallBtn">
-                    <p>GPS(내주변)</p>
-                    <h3 className="pagePrice">200만원 
-                    <input className="checkBox" type="checkbox"checked={isChecked} onChange={(e)=>handleCheck(e)}/>
+                <div className="smallBtn" key={i}>
+                    <p>{item.option}</p>
+                    <h3 className="pagePrice">{item.price}만원
+                    <input className="checkBox" type="checkbox" data-option={item.option} data-price={item.price} onChange={(e)=>handleCheck(e)}/>
                     </h3>
-                    
                 </div>
             </div>
-            <div>
-                <div className="smallBtn">
-                    <p>지도(맵 커스텀)</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>카카오톡 푸쉬</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>커뮤니티</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>공유하기</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>유저타입확장</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>채팅(실시간)</p>
-                    <h3 className="pagePrice">200만원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
-            <div>
-                <div className="smallBtn">
-                    <p>필요 없어요</p>
-                    <h3 className="pagePrice">0원
-                    <input className="checkBox" type="checkbox" checked={false}/></h3>
-                </div>
-            </div>
+                </>)
+            })}
+           
+            
             
         </div>
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/programm/two'><button className="pageBtn">이전단계</button></Link>
-                <Link to='/programm/admin'><button className="pageBtn">다음단계</button></Link>
+                <Link to='/programm/admin'><button style={{marginLeft: "20px"}} className="pageBtn">다음단계</button></Link>
             </div>
     </div>
      </>);

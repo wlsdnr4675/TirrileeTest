@@ -54,22 +54,22 @@ const StepTow = () => {
             선택에 많은 도움이 될꺼예요!</h4>
             </div>
             <div style={{marginTop: "50px"}}>
-                <div className="smallBtn" onClick={(e)=>under20page(e)}>
+                <button className="smallBtn" onClick={(e)=>under20page(e)}>
                     <p>~20P</p>
                     <h3 className="pagePrice">기본금액 x1</h3>
-                </div>
+                </button>
             </div>
             <div>
-                <div className="smallBtn" onClick={(e)=>over20page(e)}>
+                <button className="smallBtn" onClick={(e)=>over20page(e)}>
                     <p>21P~30P</p>
                     <h3 className="pagePrice">기본금액 x2</h3>
-                </div>
+                </button>
             </div>
             
         </div>
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/programm/design'><button className="pageBtn">이전단계</button></Link>
-                <button className="pageBtn" onClick={(e)=> dispatchEvent(e)}>다음단계</button>
+                <button className="pageBtn" style={{marginLeft: "20px"}} onClick={(e)=> dispatchEvent(e)}>다음단계</button>
             </div>
     </div>
      </>);
