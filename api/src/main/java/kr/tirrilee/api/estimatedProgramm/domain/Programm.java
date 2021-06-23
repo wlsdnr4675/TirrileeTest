@@ -52,6 +52,7 @@ public class Programm {
         this.plan = dto.getPlan();
         this.pageNum = dto.getPageNum();
         this.price = dto.getPrice();
+        this.design = dto.getDesign();
 
     }
 

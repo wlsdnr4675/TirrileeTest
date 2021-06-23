@@ -1,6 +1,7 @@
 package kr.tirrilee.api.estimatedProgramm.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +16,13 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/programm")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProgrammController {
     private final ProgrammServiceImpl service;
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody ProgrammDto programm) {
+        System.out.println("Sssss: " + programm.toString());
         return ResponseEntity.ok(service.programmSave(programm));
     }
 

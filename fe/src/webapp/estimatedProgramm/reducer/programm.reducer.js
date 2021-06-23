@@ -12,7 +12,7 @@ export const registerProgramm = createAsyncThunk(
 )
 
 export const resultProgramm = createAsyncThunk(
-    "programm/result",
+    `programm/result`,
     async(programmId) =>{
         const response = await ProgrammService.programmresult(programmId)
         return response.data;
@@ -23,7 +23,7 @@ export const resultProgramm = createAsyncThunk(
 const programmSlice = createSlice({
     name: 'programms',
     initialState: {
-        programms:{},
+        programm:[],
         current: [],
         currentOption:[],
     },
@@ -40,10 +40,10 @@ const programmSlice = createSlice({
     },
     extraReducers: (builder) =>{
         builder.addCase(registerProgramm.fulfilled,(state, {payload}) => {
-            state.programms = payload
+            state.programm = payload
         })
         .addCase(resultProgramm.fulfilled,(state, {payload}) => {
-            state.programms = payload
+            state.programm = payload
         })
         .addMatcher(isRejectedAction).addDefaultCase()
         .addDefaultCase((state, payload)=>{})

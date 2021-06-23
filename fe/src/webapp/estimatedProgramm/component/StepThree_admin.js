@@ -1,11 +1,33 @@
-import React,{} from 'react';
-import { useSelector } from 'react-redux';
+import React,{useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom'
+import {addOption, registerProgramm} from 'webapp/estimatedProgramm/reducer/programm.reducer'
 
 const StepThree_admin = () => {
-    const currentOptions = useSelector(state => state.programms.currentOption)
+    
+    const dispatch  = useDispatch();
+    const [isChecked , setIsChecked] = useState(false);
+
+    const [optionList, setOptionList] = useState([
+        { optionName: "서비스 내에서 관리 ", optionPrice: 100 },
+        { optionName: "기본 Admin", optionPrice: 150 },
+        { optionName: "확장 Admin", optionPrice: 200 },
+        { optionName: "필요없어요", optionPrice: 0 },
+       
+    ]);
+
+    
  
-    console.log("sssssssssssssss", currentOptions)
+    const handleClick =  (e) =>{
+        e.stopPropagation();
+        e.preventDefault();
+        const option = e.target.getAttribute("data-option")
+        const price = e.target.getAttribute("data-price")
+        setIsChecked(true)
+        dispatch(addOption({optionName: option, optionPrice: Number(price)}))
+    }
+
+
     return (<>  
     <div>
         <div className="main_section2_bg">
@@ -23,26 +45,48 @@ const StepThree_admin = () => {
             </div>
             <div className="btnDiv">
             <div className="adminAlign" >
-                <div className="adminBtn" onClick={""}>
-                    <p>~20P</p>
+                <div className="adminBtn" >
+                    <input className="admin_checkBox" type="checkbox"data-option={optionList[0].optionName} 
+                     data-price={optionList[0].optionPrice} onChange={(e)=>handleClick(e)}/>
+                    <h3>{optionList[0].optionName}</h3>
+                    <h3 className="admin_second">관리자권한부여</h3>
+                    <h3 className="admin_price">{optionList[0].optionPrice}만원
+
+                    </h3>
                 </div>
-                <div className="adminBtn" onClick={""}>
-                    <p>~20P</p>
+                <div className="adminBtn" >
+                    <input className="admin_checkBox" type="checkbox" data-option={optionList[1].optionName} data-price={optionList[1].optionPrice} onChange={(e)=>handleClick(e)}/>
+                    <h3>{optionList[1].optionName}</h3>
+                    <h3 className="admin_second">관리자페이지운영</h3>
+                    <h3 className="admin_price">{optionList[1].optionPrice}만원
+                    </h3>
+                    
+
+
                 </div>
             </div>
             <div className="adminAlign" >
-            <div className="adminBtn" onClick={""}>
-                    <p>~20P</p>
+            <div className="adminBtn" >
+                    <input className="admin_checkBox" type="checkbox" data-option={optionList[2].optionName} data-price={optionList[2].optionPrice} onChange={(e)=>handleClick(e)}/>
+                    <h3>{optionList[2].optionName}</h3>
+                    <h3 className="admin_second">관리자페이지 + 대쉬보드</h3>
+                    <h3 className="admin_price">{optionList[2].optionPrice}만원
+                    </h3>
+
                 </div>
-                <div className="adminBtn" onClick={""}>
-                    <p>~20P</p>
+                <div className="adminBtn" >
+                    <input className="admin_checkBox" type="checkbox" data-option={optionList[3].optionName} data-price={optionList[3].optionPrice} onChange={(e)=>handleClick(e)}/>
+                    <h3>{optionList[3].optionName}</h3>
+                    <h3 className="admin_second">해당기능이 필요없어요</h3>
+                    <h3 className="admin_price">{optionList[3].optionPrice}만원
+                    </h3>
                 </div>
             </div>
         </div>
         </div>
         <div style={{marginTop: "50px"}} className="textCenter">
                 <Link to='/programm/option'><button className="pageBtn">이전단계</button></Link>
-                <Link to='/programm/finish'><button className="pageBtn" style={{marginLeft: "10px"}} onClick={""}>다음단계</button></Link>
+                <Link to='/programm/finish'><button className="pageBtn" style={{marginLeft: "10px"}} >다음단계</button></Link>
             </div>
     </div>
     </>);

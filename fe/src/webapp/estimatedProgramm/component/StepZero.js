@@ -17,13 +17,13 @@ const ServiceChoice = () => {
     const appClick =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={service: 'app', price: 300}
+        const data ={serviceName: 'App', price: 300}
         setProgramm({...data});
     }
     const webClick =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={service: 'web', price: 400}
+        const data ={serviceName: 'Web', price: 400}
         setProgramm({...data});
     }
     const dispatchEvent = (e) =>{

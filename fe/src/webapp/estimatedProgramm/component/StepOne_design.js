@@ -12,19 +12,19 @@ const StepOne_design = () => {
     const dispatch = useDispatch();
     
     const [programm, setProgramm] = useState({
-        design: false,
+        design: "no",
         price: 0,
     });
     const yesDesign =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={design: true, price: 50}
+        const data ={design: "yes", price: 50}
         setProgramm({...data});
     }
     const noDesign =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={design: false, price: 100}
+        const data ={design: "no", price: 100}
         setProgramm({...data});
     }
     console.log("prgramm: ", programm)

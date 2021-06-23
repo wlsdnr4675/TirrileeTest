@@ -6,7 +6,7 @@ const SERVER = 'http://localhost:8080'
 
 const programmresult = (programmId) => {
     return axios({
-        url: `${SERVER}/programm/list/${programmId}`,
+        url: `${SERVER}/programm/read/${programmId}`,
         method: 'get',
         headers:{
         }

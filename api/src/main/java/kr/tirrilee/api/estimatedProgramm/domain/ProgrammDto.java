@@ -28,9 +28,6 @@ public class ProgrammDto {
     private String pageNum;
     private Long price;
 
-    private String optionName;
-    private Long optionPrice;
-
     private List<OptionDto> options;
 
 }

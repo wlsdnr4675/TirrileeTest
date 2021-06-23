@@ -18,22 +18,14 @@ const StepThree_option = () => {
         { optionName: "채팅(실시간)", optionPrice: 200 },
         { optionName: "필요없어요", optionPrice: 0},
     ]);
-    const handleCheck = () => {
-        setIsChecked(!isChecked)
-    }
 
     const handleClick =  (e) =>{
         e.stopPropagation();
         e.preventDefault();
         const option = e.target.getAttribute("data-option")
         const price = e.target.getAttribute("data-price")
-        if(isChecked){
-            dispatch(addOption({option: option, price: Number(price)}))
-        }
-        else{
-
-        }
-        
+        setIsChecked(true)
+        dispatch(addOption({optionName: option, optionPrice: Number(price)}))
     }
     console.log("check: ", isChecked)
 
@@ -56,10 +48,12 @@ const StepThree_option = () => {
                 return (<>
             <div style={{marginTop: "50px"}}>
                 <div className="smallBtn" key={i}>
+                    <div style={{marginTop: "50px"}}>
                     <p>{item.optionName}</p>
                     <h3 className="pagePrice">{item.optionPrice}만원
-                    <input className="checkBox" type="checkbox" data-option={item.option} data-price={item.price} onChange={(e)=>handleCheck(e)}/>
+                    <input className="checkBox" type="checkbox" data-option={item.optionName} data-price={item.optionPrice} onChange={(e)=>handleClick(e)}/>
                     </h3>
+                    </div>
                 </div>
             </div>
                 </>)

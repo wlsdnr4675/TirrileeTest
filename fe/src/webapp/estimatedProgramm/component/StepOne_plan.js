@@ -17,20 +17,19 @@ const StepOne_plan = () => {
     const dispatch = useDispatch();
     
     const [programm, setProgramm] = useState({
-        plan: false,
+        plan: "no",
         price: 0
     });
-    console.log("sssssss", programm)
     const yesPlan =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={plan: true, price: 50}
-        setProgramm({data});
+        const data ={plan: "yes", price: 50}
+        setProgramm({...data});
     }
     const noPlan =(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        const data ={plan: false, price: 100}
+        const data ={plan: "no", price: 100}
         setProgramm({...data});
     }
     console.log("prgramm: ", programm)
@@ -40,6 +39,9 @@ const StepOne_plan = () => {
         dispatch(addProgramm(programm))
         await history.push("/programm/design")
     }
+
+    console.log("step_one_plan", programm)
+
     return (<> 
     <div>
         <div className="main_section2_bg">
